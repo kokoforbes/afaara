@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Comments</h3>
+    <h2>Comments</h2>
     <div v-if="comments.length">
       <CommentItem
         v-for="comment of comments"

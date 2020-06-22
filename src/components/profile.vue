@@ -5,19 +5,19 @@
     </div>
     <div class="body">
       <div class="content">
-        <img src="" alt="" />
+        <img :src="callIcon" alt="phone" class="icon" />
         <span>{{ user.phone }}</span>
       </div>
       <div class="content">
-        <img src="" alt="" />
+        <img :src="emailIcon" alt="email" class="icon" />
         <span>{{ user.email }}</span>
       </div>
       <div class="content">
-        <img src="" alt="" />
+        <img :src="webIcon" alt="website" class="icon" />
         <span>{{ user.website }}</span>
       </div>
       <div class="content">
-        <img src="" alt="" />
+        <img :src="cityIcon" alt="city" class="icon" />
         <span>{{ user.address.city }}</span>
       </div>
     </div>
@@ -25,6 +25,11 @@
 </template>
 
 <script>
+import callIcon from "../assets/call.svg";
+import cityIcon from "../assets/city.svg";
+import emailIcon from "../assets/email.svg";
+import webIcon from "../assets/web.svg";
+
 export default {
   name: "profile",
   props: {
@@ -34,7 +39,12 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      callIcon,
+      cityIcon,
+      emailIcon,
+      webIcon
+    };
   },
   methods: {}
 };
@@ -70,15 +80,21 @@ export default {
   flex-wrap: wrap;
   box-sizing: border-box;
   width: 100%;
+  padding: 1rem;
 }
 
 .content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
-  width: 50%;
+  width: 40%;
   margin-bottom: 1rem;
-  margin: 0 auto;
+  margin: 0.3rem auto;
+}
+
+.icon {
+  width: 16px;
+  margin-right: 1rem;
 }
 </style>

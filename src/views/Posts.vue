@@ -48,7 +48,7 @@ export default {
       return parseInt(this.$route.params.id);
     }
   },
-  async mounted() {
+  async created() {
     await this.fetchPosts();
   }
 };
