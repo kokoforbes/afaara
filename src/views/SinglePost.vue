@@ -1,7 +1,10 @@
 <template>
-  <div v-if="posts.length">
-    <postItem :post="post" :userId="userId" />
-    <comments :postId="postId" />
+  <div class="container">
+    <h2>Single Post</h2>
+    <div v-if="posts.length">
+      <postItem :post="post" :userId="userId" />
+      <comments :postId="postId" />
+    </div>
   </div>
 </template>
 
@@ -43,8 +46,20 @@ export default {
     userId() {
       return parseInt(this.$route.params.id);
     }
+  },
+  async mounted() {
+    await this.fetchPosts();
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 800px;
+  width: 100%;
+  margin-top: 20px;
+}
+</style>
