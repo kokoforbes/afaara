@@ -17,4 +17,8 @@
   width: 100%;
   margin: 1rem auto;
 }
+
+html {
+  font-size: 80%;
+}
 </style>

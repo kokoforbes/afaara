@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <h2>POSTS</h2>
+    <backBtn path="/" name="users" />
     <div v-if="posts.length">
       <postItem
         v-for="post of posts"
@@ -15,10 +16,12 @@
 <script>
 import axios from "axios";
 import postItem from "../components/postItem";
+import backBtn from "../components/backBtn";
 export default {
   name: "Posts",
   components: {
-    postItem
+    postItem,
+    backBtn
   },
 
   data() {
@@ -54,4 +57,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+</style>

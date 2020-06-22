@@ -89,12 +89,17 @@ export default {
   align-items: center;
   box-sizing: border-box;
   width: 40%;
-  margin-bottom: 1rem;
-  margin: 0.3rem auto;
+  margin-bottom: 0.4rem;
 }
 
 .icon {
   width: 16px;
   margin-right: 1rem;
+}
+
+@media (max-width: 550px) {
+  .body {
+    font-size: 65%;
+  }
 }
 </style>

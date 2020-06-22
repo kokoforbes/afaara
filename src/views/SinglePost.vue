@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h2>Single Post</h2>
+    <backBtn :path="`/users/${userId}/posts`" name="posts" class="back" />
     <div v-if="posts.length">
       <postItem :post="post" :userId="userId" />
       <comments :postId="postId" />
@@ -11,13 +12,15 @@
 <script>
 import comments from "../components/comments";
 import postItem from "../components/postItem";
+import backBtn from "../components/backBtn";
 import axios from "axios";
 
 export default {
   name: "SinglePost",
   components: {
     comments,
-    postItem
+    postItem,
+    backBtn
   },
   data() {
     return {
